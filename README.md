@@ -93,6 +93,25 @@ Released under the MIT License — free to use, modify, and distribute.
 
 ---
 
+## 🚀 Release Policy
+
+The `main` branch of this repository is considered **BETA** and may include experimental changes or decorators that are still being tested. It is not recommended for production use.
+
+For stable and production-ready versions, please use the official **Releases** section:
+
+👉 [github.com/samahjoob/sds/releases](https://github.com/samahjoob/sds/releases)
+
+### ✅ Each release includes:
+
+- A tagged version number (e.g. `v1.0`)
+- A downloadable, validated `sds.json` file
+- A changelog describing additions or fixes
+
+> **Note:** Only files from the Releases section are guaranteed to be safe, complete, and aligned with the SDS specification.  
+> Please avoid using files directly from the `main` branch unless you're contributing or testing.
+
+---
+
 ## 👤 Author
 
 **Seyyed Ahmadreza Mahjoob**
