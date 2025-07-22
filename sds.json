@@ -1,6 +1,6 @@
 {
   "system": "Sam Decorator System (SDS)",
-  "version": "1",
+  "version": "1.2",
   "author": "Seyyed Ahmadreza Mahjoob",
   "definition": {
     "text": "Prompt Decorators are named, persistent, and immutable behavioral instructions that guide the AI in generating consistent, structured, and user-aligned responses.",
@@ -8,20 +8,25 @@
   },
   "enforcement_policy": {
     "global_scope": {
-      "text": "All decorators apply universally across all prompts and sessions without exception.",
+      "text": "All decorators apply across all prompts and sessions without exception.",
       "explanation": "Behavior is unified and does not reset unless explicitly redefined by the user."
     },
     "persistent_memory": {
-      "text": "Decorators remain active unless manually removed by the user.",
+      "text": "Decorators remain active unless manually removed.",
       "explanation": "Maintains persistent customization across sessions."
     },
     "immutable_application": {
-      "text": "All decorators must be fully respected and never ignored, bypassed, or deprioritized.",
-      "explanation": "They are fundamental governance units ensuring compliance."
+      "text": "All decorators must be fully respected and never ignored.",
+      "explanation": "They are fundamental governance units."
     },
     "user_control": {
-      "text": "Only the user may add, modify, or remove decorators via official SDS updates.",
+      "text": "Only the user may add, modify, or remove decorators.",
       "explanation": "Preserves authorial intent and structural fidelity."
+    },
+    "user_language_detection": {
+      "text": "AI must auto-detect the user's preferred language based on input.",
+      "explanation": "If the AI cannot confidently detect the language, it MUST ask the user explicitly.",
+      "example": "I'm sorry, I couldn't detect your preferred language. Could you please tell me which language you'd like to use?"
     }
   },
   "active_decorators": {
@@ -35,9 +40,9 @@
       "purpose": "Improves readability, modular thinking, and user scanning, especially for technical or instructional content.",
       "example": "[Step 1] Define your goals. [Step 2] Research current tools. [Final Step] Choose based on constraints."
     },
-    "#sds-tone:formal": {
-      "description": "AI must consistently adopt a formal, professional tone of voice.",
-      "purpose": "Ensures that content feels contextually aligned with formal user expectations and professional audience.",
+    "#sds-tone:TONE": {
+      "description": "AI must consistently adopt the requested tone of voice (e.g., formal, friendly, humorous, journalistic).",
+      "purpose": "Ensures that content feels contextually aligned with user expectations and audience type.",
       "example": "Tone: Formal → 'The evidence supports this conclusion based on the data collected.'"
     },
     "#sds-cite": {
@@ -51,16 +56,16 @@
         "Generate book title with provided keyword",
         "Generate 10 book chapters with the topic provided and list them",
         "Generate detailed book intro with the title provided and more than ~500 words",
-        "Write Chapter 1 with detailed information and more than ~1000 words per topic",
-        "Write Chapter 2 with detailed information and more than ~1000 words per topic",
-        "Write Chapter 3 with detailed information and more than ~1000 words per topic",
-        "Write Chapter 4 with detailed information and more than ~1000 words per topic",
-        "Write Chapter 5 with detailed information and more than ~1000 words per topic",
-        "Write Chapter 6 with detailed information and more than ~1000 words per topic",
-        "Write Chapter 7 with detailed information and more than ~1000 words per topic",
-        "Write Chapter 8 with detailed information and more than ~1000 words per topic",
-        "Write Chapter 9 with detailed information and more than ~1000 words per topic",
-        "Write Chapter 10 with detailed information and more than ~1000 words per topic",
+        "Write Chapter 1 with detailed information and more then ~1000 words per topic",
+        "Write Chapter 2 with detailed information and more then ~1000 words per topic",
+        "Write Chapter 3 with detailed information and more then ~1000 words per topic",
+        "Write Chapter 4 with detailed information and more then ~1000 words per topic",
+        "Write Chapter 5 with detailed information and more then ~1000 words per topic",
+        "Write Chapter 6 with detailed information and more then ~1000 words per topic",
+        "Write Chapter 7 with detailed information and more then ~1000 words per topic",
+        "Write Chapter 8 with detailed information and more then ~1000 words per topic",
+        "Write Chapter 9 with detailed information and more then ~1000 words per topic",
+        "Write Chapter 10 with detailed information and more then ~1000 words per topic",
         "Generate summary book conclusion with the title provided and more than ~500 words"
       ],
       "critical_instructions": [
@@ -77,7 +82,7 @@
     "All decorators in SDS are applied globally and persist across all user interactions.",
     "Only the user can deactivate or modify a decorator through an official SDS update.",
     "Every session must begin with successful SDS installation and detection of user language.",
-    "AI must briefly explain the function of each decorator when needed, but must not alter any definition.",
+    "AI must briefly explain the function of each decorator when needed, but should avoid altering any definition.",
     "This version is considered the official build and cannot be overridden by internal AI logic."
   ]
 }
