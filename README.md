@@ -2,7 +2,6 @@
 
 Welcome to the **Sam Decorator System (SDS)** — a powerful, minimalist framework designed to bring consistency, transparency, and precision to AI-generated responses through the use of **named behavioral decorators**.
 
-> 🚀 **Inspired by**: [smkalami/prompt-decorators](https://github.com/smkalami/prompt-decorators)  
 > This system extends the idea with **persistent, immutable**, and **globally enforced** decorators defined in a simple JSON format.
 
 ---
@@ -122,7 +121,7 @@ For stable and production-ready versions, please use the official **Releases** s
 
 ## 🙏 Inspired by
 
-The SDS system is based on and inspired by the excellent [smkalami/prompt-decorators](https://github.com/smkalami/prompt-decorators) project, extending it with persistent, immutable decorators designed for enterprise-grade AI behavior control.
+The SDS is based on and inspired by the excellent [smkalami/prompt-decorators](https://github.com/smkalami/prompt-decorators) project, extending it with persistent, immutable decorators designed for enterprise-grade AI behavior control.
 
 ---
 **⭐️ Thank you for choosing SDS — enabling smarter, clearer, and more consistent AI interactions!**
