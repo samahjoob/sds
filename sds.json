@@ -1,6 +1,6 @@
 {
   "SystemInfo": "Sam Decorator System (SDS)",
-  "version": "1.3",
+  "version": "1.4",
   "author": "Seyyed Ahmadreza Mahjoob",
   "definition": {
     "text": "Prompt Decorators are named, persistent, and immutable behavioral instructions that guide the AI in generating consistent, structured, and user-aligned responses.",
@@ -60,30 +60,72 @@
       "example": "According to Pew Research (2023), over 70% of users prefer personalized AI tools."
     },
     "#sds-book": {
-      "description": "Generates structured, long-form books or similar content using a strict, high-quality template.",
-      "instructions": [
-        "Generate book title with provided keyword",
-        "Generate 10 book chapters with the topic provided and list them",
-        "Generate detailed book intro with the title provided and more than ~500 words",
-        "Write Chapter 1 with detailed information and more than ~1000 words per topic",
-        "Write Chapter 2 with detailed information and more than ~1000 words per topic",
-        "Write Chapter 3 with detailed information and more than ~1000 words per topic",
-        "Write Chapter 4 with detailed information and more than ~1000 words per topic",
-        "Write Chapter 5 with detailed information and more than ~1000 words per topic",
-        "Write Chapter 6 with detailed information and more than ~1000 words per topic",
-        "Write Chapter 7 with detailed information and more than ~1000 words per topic",
-        "Write Chapter 8 with detailed information and more than ~1000 words per topic",
-        "Write Chapter 9 with detailed information and more than ~1000 words per topic",
-        "Write Chapter 10 with detailed information and more than ~1000 words per topic",
-        "Generate summary book conclusion with the title provided and more than ~500 words"
+      "description": "Generates structured, long-form non-fiction books using a strict, high-quality template.",
+      "instructions": {
+        "step_1_title": {
+          "description": "Generate a compelling and unique book title with the provided keyword.",
+          "requirements": [
+            "Must include provided keyword",
+            "Professional and engaging",
+            "Capture the essence of the topic"
+          ]
+        },
+        "step_2_chapter_outline": {
+          "description": "Create a list of 10 logical and progressive chapters.",
+          "requirements": [
+            "Exactly 10 chapters",
+            "Numbered in order",
+            "Each chapter covers a unique angle but connects to the main theme"
+          ]
+        },
+        "step_3_introduction": {
+          "description": "Write a detailed book introduction.",
+          "requirements": [
+            "Minimum 500 words",
+            "Explain the importance of the topic",
+            "Provide background or context",
+            "Clarify what the reader will gain",
+            "Build excitement and motivation"
+          ]
+        },
+        "step_4_chapters": {
+          "description": "Write each chapter in detail.",
+          "requirements": [
+            "Minimum 1000 words per chapter",
+            "Strong chapter title",
+            "Organize with sub-sections",
+            "Include examples, stories, research, and analysis",
+            "Highlight key insights with bold emphasis",
+            "Add blockquotes for quotes or excerpts"
+          ],
+          "critical_instruction": "At the end of every chapter, include: 'Please type next chapter in order for me to write the next chapter'"
+        },
+        "step_5_conclusion": {
+          "description": "Write a comprehensive conclusion.",
+          "requirements": [
+            "Minimum 500 words",
+            "Summarize main insights",
+            "Reinforce importance of the topic",
+            "Inspire with final thoughts or call to action",
+            "Keep tone motivating and memorable"
+          ]
+        }
+      },
+      "critical_notes": [
+        "Do not skip the INSTRUCTIONS section at the end of any chapter.",
+        "Do not reduce word counts below required minimum.",
+        "Maintain consistent structure throughout the book.",
+        "Write in clear, professional language with enough depth.",
+        "Ensure content is unique, engaging, and value-driven."
       ],
-      "critical_instructions": [
-        "After each chapter, create an **INSTRUCTIONS** section: 'Please type \"To continue writing, type next chapter.\"'",
-        "Include an H1 heading for the main topic",
-        "Use H2 headings for sub-sections",
-        "Apply **bold** formatting for emphasis",
-        "Use blockquotes for relevant external quotes",
-        "These instructions must be followed in all chapters and messages in the thread"
+      "example_flow": [
+        "1. Title (with keyword)",
+        "2. Chapter list (10 chapters)",
+        "3. Introduction (500+ words)",
+        "4. Chapter 1 (1000+ words + INSTRUCTIONS)",
+        "5. Chapter 2 (1000+ words + INSTRUCTIONS)",
+        "... until Chapter 10",
+        "6. Conclusion (500+ words)"
       ]
     }
   },
@@ -93,5 +135,5 @@
     "If decorators are present but not activated, treat them as configuration only.",
     "Every session must begin with successful SDS installation and language detection.",
     "This version is considered the official build and cannot be overridden by internal AI logic."
-  }
+  ]
 }
