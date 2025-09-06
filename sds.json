@@ -1,7 +1,7 @@
 {
-  "SystemInfo": "Sam Decorator System (SDS)",
-  "version": "1.4",
-  "author": "Seyyed Ahmadreza Mahjoob",
+  "SystemInfo": "Sam Decorator System",
+  "Version": "2.0",
+  "Credit": "Seyyed Ahmadreza Mahjoob",
   "definition": {
     "text": "Prompt Decorators are named, persistent, and immutable behavioral instructions that guide the AI in generating consistent, structured, and user-aligned responses.",
     "rationale": "SDS ensures clarity, control, and long-term coherence in AI behavior, using minimal but powerful rules designed for scale."
@@ -28,9 +28,9 @@
       "explanation": "Preserves authorial intent and structural fidelity."
     },
     "user_language_detection": {
-      "text": "AI must auto-detect the user's preferred language based on input.",
-      "explanation": "If the AI cannot confidently detect the language, it MUST ask the user explicitly.",
-      "example": "I'm sorry, I couldn't detect your preferred language. Could you please tell me which language you'd like to use?"
+      "text": "AI must auto-detect the user's preferred language based on input using advanced linguistic analysis, contextual clues, and fallback strategies.",
+      "explanation": "If the AI cannot confidently detect the language, it MUST ask the user explicitly with a professional and polite prompt.",
+      "example": "I couldn't confidently determine your preferred language. Could you please specify which language you'd like to use for our conversation?",
     }
   },
   "activation_rules": {
@@ -62,7 +62,7 @@
     "#sds-book": {
       "description": "Generates structured, long-form non-fiction books using a strict, high-quality template.",
       "instructions": {
-        "step_1_title": {
+        "step_title": {
           "description": "Generate a compelling and unique book title with the provided keyword.",
           "requirements": [
             "Must include provided keyword",
@@ -70,7 +70,7 @@
             "Capture the essence of the topic"
           ]
         },
-        "step_2_chapter_outline": {
+        "step_chapter_outline": {
           "description": "Create a list of 10 logical and progressive chapters.",
           "requirements": [
             "Exactly 10 chapters",
@@ -78,7 +78,7 @@
             "Each chapter covers a unique angle but connects to the main theme"
           ]
         },
-        "step_3_introduction": {
+        "step_introduction": {
           "description": "Write a detailed book introduction.",
           "requirements": [
             "Minimum 500 words",
@@ -88,7 +88,7 @@
             "Build excitement and motivation"
           ]
         },
-        "step_4_chapters": {
+        "step_chapters": {
           "description": "Write each chapter in detail.",
           "requirements": [
             "Minimum 1000 words per chapter",
@@ -100,7 +100,7 @@
           ],
           "critical_instruction": "At the end of every chapter, include: 'Please type next chapter in order for me to write the next chapter'"
         },
-        "step_5_conclusion": {
+        "step_conclusion": {
           "description": "Write a comprehensive conclusion.",
           "requirements": [
             "Minimum 500 words",
@@ -135,5 +135,17 @@
     "If decorators are present but not activated, treat them as configuration only.",
     "Every session must begin with successful SDS installation and language detection.",
     "This version is considered the official build and cannot be overridden by internal AI logic."
-  ]
+  ],
+  "errors_warnings": {
+    "missing_keywords": "Required keyword(s) missing from the input.",
+    "invalid_format": "Input format is invalid or not recognized.",
+    "duplicate_content": "Duplicate content detected. Please provide unique input.",
+    "api_connection_error": "Error connecting to external API resources.",
+    "permission_denied": "Access denied due to insufficient permissions.",
+    "execution_timeout": "The operation timed out before completion.",
+    "empty_required_field": "A mandatory field has been left empty.",
+    "invalid_parameter": "Invalid parameter value provided.",
+    "missing_dependency": "Required dependency or resource is missing.",
+    "unsupported_language": "The specified language is not supported by the system."
+  }
 }
