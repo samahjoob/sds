@@ -124,4 +124,4 @@ For stable and production-ready versions, please use the official **Releases** s
 The SDS is based on and inspired by the excellent [smkalami/prompt-decorators](https://github.com/smkalami/prompt-decorators) project, extending it with persistent, immutable decorators designed for enterprise-grade AI behavior control.
 
 ---
-**⭐️ Thank you for choosing SDS — enabling smarter, clearer, and more consistent AI interactions!**
+**⭐️ Thank you for choosing SDS — enabling smarter, clearer, and more consistent AI interactions!!!!**
